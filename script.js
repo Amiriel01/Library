@@ -28,16 +28,41 @@ function Book(title, author, pages, status, opinion) {
 }
 
 //this will create books on the table from the form//
-function addBook() {
-    let title = title.value;
+function addBook(title, author, pages, status, opinion) {
+    /*let title = title.value;
     let author = author.value;
     let pages = pages.value;
     let status = status.value;
-    let opinion = opinion.value;
+    let opinion = opinion.value;*/
     //this creates a new Book using the this parameters and pushes it to the myLibrary array//
     let addNewBook = new Book(title, author, pages, status, opinion);
     myLibrary.push(addNewBook);
 }
+
+//creating an update table function that takes the content entered and returns it to the node using the textContent command//
+updateTable = () => {
+    tableBody.textContent = "";
+}
+
+myLibrary.forEach(myLibrary => {
+    //adding rows to the table to hold info//
+    let rows = document.createElement('tr');
+    rows.classList.add("rows");
+    tableBody.appendChild(rows);
+    //loops function over every key (this. items) in myLibrary//
+    for (let key in myLibrary) {
+        //console.log for troubleshooting only//
+        //curly braces solo displays the key term//
+        //brackets around key will display the value of the key//
+        console.log('${key} : ${myLibrary[key]}');
+        //creates cells for new info to be put in//
+        let cells=document.createElement('td"');
+        //textContent will display the data for the key and key value//
+        cells.textContent=('${key} : ${myLibrary[key]}');
+        //attach new cells to new rows created//
+        rows.appendChild(cells);
+    }
+})
 
 //this will toggle the form and table using the add book button//
 //classList.toggle is one way to manipulate the read-only property that returns a live collection of the class attributes/elements//
@@ -53,26 +78,35 @@ addButton.addEventListener("click", toggleHidden);
 
 //this will make the clear button clear the form//
 function clearForm() {
-    title.value="";
-    author.value="";
-    pages.value="";
+    title.value = "";
+    author.value = "";
+    pages.value = "";
 }
 
 clear.addEventListener("click", clearForm());
 
-//this will make the back button clear the form and return user to the table view//
+//this will make the back button clear the form and return user to the table view. This did not work.//
 /*function backForm() {
     clearForm();
     toggleHidden();
 }
 
 back.addEventListener("click", backForm());*/
+
+//this worked//
 back.addEventListener("click", () => {
     clearForm();
     toggleHidden();
 });
 
-//
-    
 
+//the submit button will send the form info to the table, clear the form, and return user to the table view//
+submit.addEventListener("click", () => {
+    addBook();
+    updateTable();
+    clearForm();
+    toggleHidden();
+});
 
+addBook("a", "b", "1");
+console.log("array contents", myLibrary);
