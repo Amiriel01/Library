@@ -51,4 +51,28 @@ function toggleHidden() {
 //this will make the add book button work//
 addButton.addEventListener("click", toggleHidden);
 
+//this will make the clear button clear the form//
+function clearForm() {
+    title.value="";
+    author.value="";
+    pages.value="";
+}
+
+clear.addEventListener("click", clearForm());
+
+//this will make the back button clear the form and return user to the table view//
+/*function backForm() {
+    clearForm();
+    toggleHidden();
+}
+
+back.addEventListener("click", backForm());*/
+back.addEventListener("click", () => {
+    clearForm();
+    toggleHidden();
+});
+
+//
+    
+
 

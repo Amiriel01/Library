@@ -33,12 +33,14 @@ body {
     font-weight: bold;
     margin-bottom: 1rem;
     padding: .5rem;
+    margin-top: 2rem;
 }
 
 table {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2rem;
 }
 
 table, th, td {
@@ -62,17 +64,12 @@ td {
     padding: .25rem;
 }
 
-.hidden-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 #form-title {
     font-size: 42px;
     font-weight: bold;
     text-align: center;
+    margin-top: 5rem;
 }
 
 form {
