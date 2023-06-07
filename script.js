@@ -40,8 +40,8 @@ function addBook(title, author, pages, status, opinion) {
 }
 
 //creating an update table function that takes the content entered and returns it to the node using the textContent command//
-updateTable = () => {
-    tableBody.textContent = "";
+function displayBooks() {
+    let books=document.querySelector(".tableBody");
 }
 
 myLibrary.forEach(myLibrary => {
@@ -63,6 +63,10 @@ myLibrary.forEach(myLibrary => {
         rows.appendChild(cells);
     }
 })
+
+/*updateTable = () => {
+    tableBody.textContent = "";
+}*/
 
 //this will toggle the form and table using the add book button//
 //classList.toggle is one way to manipulate the read-only property that returns a live collection of the class attributes/elements//
@@ -109,4 +113,6 @@ submit.addEventListener("click", () => {
 });
 
 addBook("a", "b", "1");
-console.log("array contents", myLibrary);
+console.log("End of Code Array Contents", myLibrary);
+
+displayBooks();
