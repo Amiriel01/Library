@@ -43,30 +43,32 @@
             </tbody>
         </table>
     </div>
-    <div class="hidden-form">
+    <div class="form hidden">
         <div id="form-title">
             Add or Edit Book
         </div>
-        <form class="form">
-            <input type="text" id="book-title" placeholder="Title of Book">
-            <input type="text" id="book-author" placeholder="Author of Book">
-            <input type="number" id="book-pages" placeholder="Number of Pages">
-            <select id="read-status">
-                <option value="read">Read</option>
-                <option value="not-read">Not Read</option>
-            </select>
-            <select id="read-opinion">
-                <option id="love-book" value="love-book">❤️ Loved It</option>
-                <option id="like-book" value="like-book">😃 Liked It</option>
-                <option id="ok-book" value="ok-book">😐 Just Ok</option>
-                <option id="dislike-book" value="dislike-book">☹️ Terrible</option>
-            </select>
-            <div class="form-buttons">
-                <input type="button" id="back" value="Back">
-                <input type="reset" id="clear" value="Clear">
-                <input type="submit" id="submit" value="Submit">
-            </div>
-        </form>
+        <div class="form-move">
+            <form class="form">
+                <input type="text" id="book-title" placeholder="Title of Book" required>
+                <input type="text" id="book-author" placeholder="Author of Book" required>
+                <input type="number" id="book-pages" placeholder="Number of Pages">
+                <select id="read-status" required>
+                    <option value="read">Read</option>
+                    <option value="not-read">Not Read</option>
+                </select>
+                <select id="read-opinion">
+                    <option id="love-book" value="love-book">❤️ Loved It</option>
+                    <option id="like-book" value="like-book">😃 Liked It</option>
+                    <option id="ok-book" value="ok-book">😐 Just Ok</option>
+                    <option id="dislike-book" value="dislike-book">☹️ Terrible</option>
+                </select>
+                <div class="form-buttons">
+                    <input type="button" id="back" value="Back">
+                    <input type="reset" id="clear" value="Clear">
+                    <input type="submit" id="submit" value="Submit">
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 <script src="script.js"></script>

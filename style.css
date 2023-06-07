@@ -9,6 +9,7 @@ body {
     min-width: 100vw;
     min-height: 100vh;
     font-family: 'Courier New', Courier, monospace;
+    background-color: #F0F2F3;
 }
 
 #title1 {
@@ -71,12 +72,19 @@ td {
 #form-title {
     font-size: 42px;
     font-weight: bold;
+    text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
     margin-top: .5rem;
+    width: 20rem;
+}
+
+.form-move {
+    display: flex;
+    justify-content: center;
 }
 
 input,
@@ -92,4 +100,8 @@ select,
 #clear,
 #submit {
     padding: .5rem;
+}
+
+.hidden {
+    display: none;
 }
