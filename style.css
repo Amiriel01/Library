@@ -61,4 +61,35 @@ td {
     padding: .25rem;
 }
 
+.hidden-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+#form-title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+}
+
+input,
+select,
+.form-buttons {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    font-size: 24px;
+    text-align: center;
+}
+
+#back,
+#clear,
+#submit {
+    padding: .5rem;
+}
