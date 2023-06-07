@@ -1,6 +1,6 @@
 //Attach DOM objects. Link js to html//
 //main page//
-let addButton = document.querySelector("#add-button");
+let addButton = document.querySelector(".add-button");
 let table = document.querySelector(".table");
 let tableBody = document.querySelector("tbody");
 //hidden form//
@@ -41,12 +41,14 @@ function addBook() {
 
 //this will toggle the form and table using the add book button//
 //classList.toggle is one way to manipulate the read-only property that returns a live collection of the class attributes/elements//
-//hidden-form is found in html and css(display:none)//
+//.hidden is found in css(display:none) form, table, and button need class= (cannot mix id= and class=)//
 function toggleHidden() {
     form.classList.toggle("hidden");
-    table.classList.toggle("hidden");
     addButton.classList.toggle("hidden");
+    table.classList.toggle("hidden");
 }
 
 //this will make the add book button work//
 addButton.addEventListener("click", toggleHidden);
+
+
