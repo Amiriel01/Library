@@ -1,5 +1,18 @@
-//attaches js to books in html//
-let books = document.querySelector(".books");
+//Attach DOM objects. Link js to html//
+//main page//
+let addButton=document.querySelector("add-button");
+let table=document.querySelector(".table");
+let tableBody=document.querySelector("tbody");
+//hidden form//
+let form=document.querySelector(".form");
+let title=form.querySelector("#book-title");
+let author=form.querySelector("#book-author");
+let pages=form.querySelector("#book-pages");
+let status=form.querySelector("#read-status");
+let back=form.querySelector("#back");
+let clear=form.querySelector("#clear");
+let submit=form.querySelector("#submit");
+
 
 //creates empty array for books to go in//
 let myLibrary = [];
