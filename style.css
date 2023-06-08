@@ -81,17 +81,17 @@ td {
     padding: 0.5rem;
 }
 
-.table-buttons {
+td button {
     font-size: 18px;
     padding: .25rem;
     color: #0C2D48
 }
 
-.table-buttons:hover {
+td button:hover {
     background-color: #7393B3;
 }
 
-.table-buttons:active {
+td button:active {
     background-color: pink;
 }
 

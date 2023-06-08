@@ -34,7 +34,7 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="tbody">
                 <td>Title Info</td>
                 <td>Author Info</td>
                 <td>Pages Info</td>
@@ -51,18 +51,18 @@
         </div>
         <div class="form-move">
             <form class="form">
-                <input type="text" id="book-title" placeholder="Title of Book" required>
-                <input type="text" id="book-author" placeholder="Author of Book" required>
-                <input type="number" id="book-pages" placeholder="Number of Pages">
-                <select id="read-status" required>
+                <input type="text" id="book-title" placeholder="Title of Book" name="book-title" required>
+                <input type="text" id="book-author" placeholder="Author of Book" name="author-name" required>
+                <input type="number" id="book-pages" placeholder="Number of Pages" name="book-pages" >
+                <select id="read-status" name="read-status" required>
                     <option value="read">Read</option>
                     <option value="not-read">Not Read</option>
                 </select>
-                <select id="read-opinion">
-                    <option id="love-book" value="love-book">❤️ Loved It</option>
-                    <option id="like-book" value="like-book">😃 Liked It</option>
-                    <option id="ok-book" value="ok-book">😐 Just Ok</option>
-                    <option id="dislike-book" value="dislike-book">☹️ Terrible</option>
+                <select id="read-opinion" name="read-option">
+                    <option id="love-book" value="love-book" name="loved-book">❤️ Loved It</option>
+                    <option id="like-book" value="like-book" name="like-book">😃 Liked It</option>
+                    <option id="ok-book" value="ok-book" name="ok-book">😐 Just Ok</option>
+                    <option id="dislike-book" value="dislike-book" name="dislike-book">☹️ Terrible</option>
                 </select>
                 <div class="form-buttons">
                     <input type="button" id="back" value="Back">
