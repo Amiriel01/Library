@@ -24,7 +24,7 @@ Table Page (With Entry):
 
 2. Once the "Add a Book" button has been clicked users will be shown a form to complete. The table will be hidden and the hidden form will present on the page in its place.
 
-3. The form features three text boxes for entering the title, author, and pages in the book. It also has two selection menus, one to choose if the book has been read or not and one to show the user's opinion of the book. The tite, author, and read status are required with pages and opinion being optional fields.
+3. The form features three text boxes for entering the title, author, and pages in the book. It also has two selection menus, one to choose if the book has been read or not and one to show the user's opinion of the book. 
 
 4. The opinion selection features five choices: ❤️ Loved It, 😃 Liked It, 😐 Just Ok, ☹️ Terrible, 📚 None Yet.
 
