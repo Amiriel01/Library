@@ -29,7 +29,7 @@ function Book(title, author, pages, status, opinion) {
 
 //this will create books on the table from the form//
 function addBook() {
-    
+
     //this creates a new Book using the this parameters and pushes it to the myLibrary array//
     let addNewBook = new Book(title.value, author.value, pages.value, readStatus.value, opinion.value);
     myLibrary.push(addNewBook);
@@ -38,7 +38,7 @@ function addBook() {
 //creating an update table function that takes the content entered and returns it to the node using the textContent command//
 function displayBooks() {
     //clears the table before each loop//
-    tableBody.innerHTML='';
+    tableBody.innerHTML = '';
     myLibrary.forEach(book => {
         //adding rows to the table to hold info//
         let rows = document.createElement('tr');
@@ -51,73 +51,89 @@ function displayBooks() {
             //brackets around key will display the value of the key//
             console.log(`${key} : ${book[key]}`);
             //creates cells for new info to be put in//
-            let cells=document.createElement('td');
+            let cells = document.createElement('td');
             //textContent will display the data for the key and key value//
-            cells.textContent=(`${book[key]}`);
+            cells.textContent = (`${book[key]}`);
             //attach new cells to new rows created//
             rows.appendChild(cells);
         }
-        let editBook=document.createElement('td');
-        let editButton=document.createElement('button');
-        editButton.innerText="Edit";
+        let editBook = document.createElement('td');
+        let editButton = document.createElement('button');
+        editButton.innerText = "Edit";
+        //this opens form with info populated to edit//
         editButton.addEventListener("click", () => {
-            edit(book);
+            title.value = book.title;
+            author.value = book.author;
+            pages.value = book.pages;
+            toggleHidden();
+            submit.addEventListener("click", removeItem);
         })
         editBook.appendChild(editButton);
         rows.appendChild(editBook);
 
-        let deleteBook=document.createElement('td');
-        let deleteButton=document.createElement('button');
-        deleteButton.innerText="Delete";
+        let deleteBook = document.createElement('td');
+        let deleteButton = document.createElement('button');
+        deleteButton.innerText = "Delete";
+        deleteButton.addEventListener("click", () => {
+            deleteButton.addEventListener(removeItem());
+        })
         deleteBook.appendChild(deleteButton);
         rows.appendChild(deleteBook);
-    })
-}
+    });
+
+//this will splice the old entry out and leave only the new entry after edit//
+function removeItem(index) {
+            myLibrary.splice(index, 1);
+            submit.removeEventListener("click", removeItem);
+            displayBooks();
+        }
+
+//function to delete row, use splice from edit//
+/*deleteButton = (index) => {
+            deleteButton.addEventListener("click", () => {
+                deleteButton.addEventListener("click", removeItem);
+            });
+            displayBooks();*/
+        }
+
 
 //this will toggle the form and table using the add book button//
 //classList.toggle is one way to manipulate the read-only property that returns a live collection of the class attributes/elements//
 //.hidden is found in css(display:none) form, table, and button need class= (cannot mix id= and class=)//
 function toggleHidden() {
-    form.classList.toggle("hidden");
-    addButton.classList.toggle("hidden");
-    table.classList.toggle("hidden");
-}
+            form.classList.toggle("hidden");
+            addButton.classList.toggle("hidden");
+            table.classList.toggle("hidden");
+        }
 
 //this will make the add book button work//
 addButton.addEventListener("click", toggleHidden);
 
-//this will make the clear button clear the form//
-function clearForm() {
-    title.value = "";
-    author.value = "";
-    pages.value = "";
-}
+    //this will make the clear button clear the form//
+    function clearForm() {
+        title.value = "";
+        author.value = "";
+        pages.value = "";
+    }
 
-clear.addEventListener("click", clearForm());
+    clear.addEventListener("click", clearForm());
 
-//this will make the back button clear the form and return user to the table view. This did not work.//
-back.addEventListener("click", () => {
-    clearForm();
-    toggleHidden();
-});
+    //this will make the back button clear the form and return user to the table view. This did not work.//
+    back.addEventListener("click", () => {
+        clearForm();
+        toggleHidden();
+    });
 
 
-//the submit button will send the form info to the table, clear the form, and return user to the table view//
-submit.addEventListener("click", () => {
-    addBook();
-    displayBooks();
-    clearForm();
-    toggleHidden();
-});
+    //the submit button will send the form info to the table, clear the form, and return user to the table view//
+    submit.addEventListener("click", () => {
+        addBook();
+        displayBooks();
+        clearForm();
+        toggleHidden();
+    });
 
-function edit(bookToEdit) {
-    console.log(bookToEdit);
-    toggleHidden();
-    title.value=bookToEdit.title;
 
-    //splice the bookToEdit then reinsert it in submit//
-    //get the index for bookToEdit to be able to splice//
-}
 
 
 
