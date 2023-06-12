@@ -1,6 +1,6 @@
 # Reading Log Library
 
-**Objective:**
+**Objective**
 
 To create a reading log library that will store books the user has read for future reference. I used HTML, CSS, and JavaScript for this project.
 
